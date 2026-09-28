@@ -253,6 +253,56 @@ body::before {
     font-size: 18px;
 }
 
+
+/* =========================================================
+   LOGIN BUTTON
+========================================================= */
+
+.login-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 11px 20px;
+
+    background: var(--green);
+    color: var(--black);
+
+    border: 1px solid var(--green);
+    border-radius: 999px;
+
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+
+    text-decoration: none;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.login-btn span {
+    font-size: 17px;
+    transition: transform 0.3s ease;
+}
+
+.login-btn:hover {
+    background: transparent;
+    color: var(--green-light);
+    border-color: var(--green-light);
+    transform: translateY(-2px);
+    box-shadow: 0 0 22px rgba(167, 201, 178, 0.12);
+}
+
+.login-btn:hover span {
+    transform: translate(3px, -3px);
+}
+
 .menu-button {
     display: none;
 

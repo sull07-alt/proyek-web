@@ -1,0 +1,334 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SULL — Login</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* =========================================
+           SULL LOGIN
+        ========================================= */
+
+        .login-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+
+            background:
+                radial-gradient(
+                    circle at 50% 40%,
+                    rgba(167, 201, 178, 0.10),
+                    transparent 35%
+                ),
+                #050807;
+
+            color: #f2f5f2;
+            font-family: "DM Sans", sans-serif;
+        }
+
+        .login-grid {
+            position: fixed;
+            inset: 0;
+
+            background-image:
+                linear-gradient(
+                    rgba(167, 201, 178, 0.035) 1px,
+                    transparent 1px
+                ),
+                linear-gradient(
+                    90deg,
+                    rgba(167, 201, 178, 0.035) 1px,
+                    transparent 1px
+                );
+
+            background-size: 80px 80px;
+
+            pointer-events: none;
+        }
+
+        .login-box {
+            position: relative;
+            z-index: 2;
+
+            width: min(460px, 100%);
+
+            padding: 45px;
+
+            border: 1px solid rgba(167, 201, 178, 0.20);
+
+            background:
+                rgba(8, 13, 11, 0.90);
+
+            backdrop-filter: blur(20px);
+
+            box-shadow:
+                0 30px 100px rgba(0, 0, 0, 0.5);
+        }
+
+        .login-top {
+            display: flex;
+            justify-content: space-between;
+
+            margin-bottom: 55px;
+
+            font-size: 11px;
+            font-weight: 700;
+
+            letter-spacing: 3px;
+
+            color: #69736e;
+        }
+
+        .login-top span:last-child {
+            color: #a7c9b2;
+        }
+
+        .login-label {
+            display: block;
+
+            margin-bottom: 12px;
+
+            font-size: 12px;
+            font-weight: 700;
+
+            letter-spacing: 4px;
+
+            color: #a7c9b2;
+        }
+
+        .login-box h1 {
+            margin: 0;
+
+            font-family: "Manrope", sans-serif;
+
+            font-size: clamp(55px, 12vw, 85px);
+
+            line-height: 0.9;
+
+            letter-spacing: -5px;
+        }
+
+        .login-description {
+            margin-top: 25px;
+
+            color: #aab4ae;
+
+            font-size: 15px;
+
+            line-height: 1.6;
+        }
+
+        .login-form {
+            margin-top: 40px;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group label {
+            display: block;
+
+            margin-bottom: 9px;
+
+            font-size: 10px;
+            font-weight: 700;
+
+            letter-spacing: 2px;
+
+            color: #69736e;
+        }
+
+        .input-group input {
+            width: 100%;
+
+            padding: 16px 0;
+
+            border: none;
+            border-bottom: 1px solid rgba(167, 201, 178, 0.20);
+
+            outline: none;
+
+            background: transparent;
+
+            color: #f2f5f2;
+
+            font-family: inherit;
+            font-size: 16px;
+
+            transition: border-color 0.3s ease;
+        }
+
+        .input-group input:focus {
+            border-bottom-color: #a7c9b2;
+        }
+
+        .input-group input::placeholder {
+            color: #69736e;
+        }
+
+        .login-button {
+            width: 100%;
+
+            margin-top: 20px;
+
+            padding: 17px 20px;
+
+            border: 1px solid #a7c9b2;
+
+            background: #a7c9b2;
+
+            color: #050807;
+
+            font-family: inherit;
+
+            font-size: 12px;
+            font-weight: 800;
+
+            letter-spacing: 3px;
+
+            cursor: pointer;
+
+            transition:
+                background 0.3s ease,
+                color 0.3s ease,
+                transform 0.3s ease;
+        }
+
+        .login-button:hover {
+            background: transparent;
+
+            color: #a7c9b2;
+
+            transform: translateY(-3px);
+        }
+
+        .login-footer {
+            display: flex;
+            justify-content: space-between;
+
+            margin-top: 35px;
+
+            font-size: 10px;
+            font-weight: 700;
+
+            letter-spacing: 2px;
+
+            color: #69736e;
+        }
+
+        .login-footer span:last-child {
+            color: #a7c9b2;
+        }
+
+        @media (max-width: 500px) {
+
+            .login-page {
+                padding: 20px;
+            }
+
+            .login-box {
+                padding: 30px 25px;
+            }
+
+            .login-top {
+                margin-bottom: 40px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="login-page">
+
+        <div class="login-grid"></div>
+
+        <div class="login-box">
+
+            <div class="login-top">
+                <span>SULL.</span>
+                <span>ACCESS 01</span>
+            </div>
+
+            <span class="login-label">
+                WELCOME
+            </span>
+
+            <h1>
+                LOGIN.
+            </h1>
+
+            <p class="login-description">
+                Enter your account to access
+                SULL Creative Portfolio.
+            </p>
+
+            <form
+                action="login.php"
+                method="POST"
+                class="login-form"
+            >
+
+                <div class="input-group">
+
+                    <label for="username">
+                        USERNAME
+                    </label>
+
+                    <input
+                        type="text"
+                        id="username"
+                        name="username"
+                        placeholder="Enter username"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="password">
+                        PASSWORD
+                    </label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Enter password"
+                        required
+                    >
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="login-button"
+                >
+                    ENTER PORTFOLIO →
+                </button>
+
+            </form>
+
+
+            <div class="login-footer">
+                <span>DESIGN / CODE / CREATE</span>
+                <span>SULL © 2026</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
