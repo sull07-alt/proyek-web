@@ -238,6 +238,10 @@ projectPreviews.forEach(
    ACTIVE NAV
 ========================================= */
 
+/* =========================================
+   ACTIVE NAV (GANTI BAGIAN INI DI SCRIPT.JS)
+========================================= */
+
 const sections =
     document.querySelectorAll(
         "section[id]"
@@ -287,8 +291,9 @@ window.addEventListener(
                     ) === `#${current}`
                 ) {
 
+                    // DI SINI KUNCINYA: Warna hijau tua (#647e6d) diganti ke UNGU rambut Hae-In (#863ccb)
                     link.style.color =
-                        "#647e6d";
+                        "#863ccb";
 
                 }
 
@@ -297,6 +302,7 @@ window.addEventListener(
 
     }
 );
+
 
 
 /* =========================================
@@ -418,115 +424,6 @@ if (email) {
 
         }
     );
-
-}
-
-/* =========================================
-   LIGHT / DARK MODE
-========================================= */
-
-const themeButton =
-    document.getElementById("themeButton");
-
-const profileImage =
-    document.querySelector(".profile-frame img");
-
-
-const darkImage =
-    "Ulquiora - light.jpg";
-
-const lightImage =
-    "𝐔𝐥𝐪𝐮𝐢𝐨𝐫𝐫𝐚 𝐂𝐢𝐟𝐞𝐫 𝐈𝐜𝐨𝐧.jpg";
-
-
-if (themeButton && profileImage) {
-
-    themeButton.addEventListener(
-        "click",
-        () => {
-
-            /* Toggle theme */
-
-            document.body.classList.toggle(
-                "light-mode"
-            );
-
-
-            const isLight =
-                document.body.classList.contains(
-                    "light-mode"
-                );
-
-
-            /* =================================
-               CHANGE PROFILE IMAGE
-            ================================= */
-
-            profileImage.style.opacity = "0";
-
-
-            setTimeout(
-                () => {
-
-                    profileImage.src =
-                        isLight
-                            ? lightImage
-                            : darkImage;
-
-                    profileImage.style.opacity = "1";
-
-                },
-                300
-            );
-
-
-            /* =================================
-               CHANGE ICON
-            ================================= */
-
-            themeButton.textContent =
-                isLight
-                    ? "☾"
-                    : "☼";
-
-
-            /* =================================
-               SAVE MODE
-            ================================= */
-
-            localStorage.setItem(
-                "sull-theme",
-                isLight
-                    ? "light"
-                    : "dark"
-            );
-
-        }
-    );
-
-
-    /* =================================
-       LOAD SAVED THEME
-    ================================= */
-
-    const savedTheme =
-        localStorage.getItem(
-            "sull-theme"
-        );
-
-
-    if (savedTheme === "light") {
-
-        document.body.classList.add(
-            "light-mode"
-        );
-
-        themeButton.textContent = "☾";
-
-        profileImage.src =
-            lightImage;
-
-    }
 
 }
 
